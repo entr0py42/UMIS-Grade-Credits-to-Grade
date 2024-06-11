@@ -36,10 +36,11 @@
 	// Function to rename the cells
     function replaceText(node) {
         if (node.nodeType === Node.TEXT_NODE) {
-            // Replace "GRADE X CREDIT" with "GRADE"
-            node.nodeValue = node.nodeValue.replace(/GRADE X CREDIT/g, "GRADE");
+		// Replace "GRADE X CREDIT" with "GRADE"
+            	node.nodeValue = node.nodeValue.replace(/GRADE X CREDIT/g, "GRADE");
+		node.nodeValue = node.nodeValue.replace(/NOT X KREDİ/g, "NOT");
         } else if (node.nodeType === Node.ELEMENT_NODE) {
-            node.childNodes.forEach(replaceText);
+		node.childNodes.forEach(replaceText);
         }
     }
 	
